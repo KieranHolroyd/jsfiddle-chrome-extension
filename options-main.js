@@ -1,18 +1,23 @@
-Spark.ready(function() {
+$(document).ready(function() {
 	// Get their one they already entered if they have one
 	if(localStorage['username'] !== undefined) {
-		Spark('input').attribute({value: localStorage['username']});
+		$('input').val(localStorage['username']);
 	}
 	
 	// Listen for the keypress event in the input
-	Spark('input').event('keypress', function(e) {
+	$('input').keypress(function(e) {
+		var inputSelected = $(this);
 		// If it was enter
 		if(e.keyCode == 13) {
-			// Set their name
-			localStorage['username'] = e.target.value;
-			
-			// Show that it was set
-			Spark('h1#status').html('Username set to ' + e.target.value);
+			// Check that they actually choose a name
+			if (inputSelected.val() !== "") {	
+				// Set their name
+				localStorage['username'] = inputSelected.val();
+				// Show that it was set
+				$('#status').html('Username set to ' + inputSelected.val());
+			} else {
+				$('#status').html('Could not set username');
+			}
 		}
 	});
 });

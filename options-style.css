@@ -1,48 +1,24 @@
-html, body {
-	width: 100%;
-}
-
-p, h1, a, li {
-	color: #3D668F;
-	font-family: arial, helvetica, sans-serif;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-div.banner {
-	width: 90%;
-	background-color: #3D668F;
-	height: 50px;
-	margin: 0 auto 10px auto;
+*{
+	outline: none;
+	margin: 0;
 	padding: 0;
+	overflow: hidden;
+}
+.banner{
+	width: 320px;
+	text-align: center;
+	background-color: #20262e;
+	color: #fff;
+	padding: 40px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px 0 rgba(34, 45, 59, 0.4);
+	margin: 50vh 50vw;
+	transform: translate(-50%, -50%);
+}
+.banner input{
+	background-color: transparent;
+	border: 1px solid #fff;
 	border-radius: 5px;
-	}
-	div.banner img {
-		height: 40px;
-		margin: 5px;
-		float: left;
-	}
-	div.banner h1 {
-		color: #FFFFFF;
-		margin: 5px;
-		padding: 0;
-		float: left;
-	}
-	div.banner a:hover {
-		text-decoration: none;
-	}
-	div.banner input {
-		width: 300px;
-		float: left;
-		background-color: #FFFFFF;
-		border: 1px solid #666666;
-		height: 30px;
-		font-size: 15px;
-		display: block;
-		clear: none;
-		margin: 10px;
-		padding: 0;
-	}
+	padding: 10px;
+	color: #fff;
+}

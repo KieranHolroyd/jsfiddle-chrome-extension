@@ -1,30 +1,103 @@
-body {
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+html {
 	width: 500px;
 	overflow: hidden;
 	overflow-y: scroll;
+	background-color: #333;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  z-index: 0;
+  background-color: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #666;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
 }
 
 div.wrapper {
-	width: 97%;
+	width: 100%;
 }
 
-p, h1, a, li {
-	color: #3D668F;
+p, h1, h2, li {
+	color: #fff;
 	font-family: arial, helvetica, sans-serif;
 	text-decoration: none;
 }
-
-a:hover {
-	text-decoration: underline;
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
 }
+#createFiddleToggle{
+	position: fixed;
+	top:8px;right:8px;
+	color: #fff;
+	font-size: 20px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 26px;
+	transition: 200ms;
+}
+#createFiddleToggle:hover{
+	transform: scale(1.2);
+}
+#reloadFiddle{
+	position: fixed;
+	top:8px;right:48px;
+	color: #fff;
+	font-size: 13px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	transition: transform 200ms;
+}
+#reloadFiddle i {
+	margin-top: 50%;
+	transform: translateY(-50%);
+}
+#reloadFiddle:hover{
+	transform: scale(1.2);
+}
+button {
+	border-radius: 5px;
+	padding: 13px 30px;
+	background: #0084ff;
+	border: none;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	font-weight: 700;
+	margin: 10px;
+	width: calc(100% - 20px);
+	-webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+			box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+	-webkit-transition: all 150ms;
+	transition: all 150ms; }
+button:hover {
+	-webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+			box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+	background: #006acc; }
+button:active {
+	-webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+			box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+	background: #004280; }
 
 div.banner {
 	width: 100%;
-	background-color: #3D668F;
+	background-color: #317ee4;
 	height: 50px;
-	margin: 0 auto 10px auto;
 	padding: 0;
-	border-radius: 5px;
 	}
 	div.banner img {
 		height: 40px;
@@ -56,26 +129,67 @@ ul {
 div#createFiddle, div#viewFiddle, div#configure {
 	display: none;
 }
-
+select {
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	padding: 10px;
+	color: #fff;
+	width: 100%;
+}
+select:focus{
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+optgroup {
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 7px;
+	padding: 10px;
+	color: #000;
+}
+option {
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 7px;
+	padding: 10px;
+	color: #000;
+}
 textarea {
 	width: 100%;
 	height: 200px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 7px;
+	padding: 10px;
+	color: #fff;
 }
 
 textarea.small {
-	height: 30px;
+	height: 50px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 7px;
+	padding: 10px;
+	color: #fff;
 }
+.inputTitle{
+	margin: 4px 10px;
 
-input[type='text'] {
-	width: 100%;
-	background-color: #FFFFFF;
-	border: 1px solid #666666;
-	height: 30px;
-	font-size: 15px;
-	display: block;
-	clear: none;
-	margin: 0;
-	padding: 0;
+}
+input{
+	width: calc(100% - 20px);
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 7px;
+	padding: 10px;
+	margin: 10px;
+	color: #fff;
+	-webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+			box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
 }
 
 iframe {
@@ -84,7 +198,23 @@ iframe {
 	clear: both;
 	margin: 10px 0 10px 0;
 }
-
-a.toggle {
-	font-weight: bold;
+.projectcontainer {
+	margin: auto;
+	list-style-type: none;
+}
+.project {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: 300ms;
+	user-select: none;
+	cursor: pointer;
+	color: #fff;
+	padding: 10px;
+	background-color: #444;
+	color: #aaa !important;
+}
+.project:hover {
+	background-color: #4d4d4d;
+	color: #fff !important;
 }

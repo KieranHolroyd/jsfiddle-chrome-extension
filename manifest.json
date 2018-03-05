@@ -1,16 +1,17 @@
 {
-	"name": "jsFiddle",
-	"version": "1.7.5",
-	"description": "View your fiddles with their revisions and create fiddles directly from the extension.",
+	"name": "JSFIDDLE 2018",
+	"version": "2",
+	"description": "The Official JSFiddle Extension",
 	"options_page": "options.html",
+	"manifest_version": 2,
 	"icons": {
 		"128": "icon.png"
 	},
 	"browser_action": {
 		"default_icon": "icon.png",
-		"popup": "popup.html"
+		"default_popup": "popup.html"
 	},
 	"permissions": [
-		"http://jsfiddle.net/"
+		"https://jsfiddle.net/"
 	]
 }
